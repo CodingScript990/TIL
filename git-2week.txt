@@ -1,0 +1,175 @@
+✔ Git 핵심쏙쏙
+
+[2주차 정리 내용]
+
+🔥 git 총정리
+
+✔ issue?
+
+ - bug(프로그램이 원하는대로 동작X)를 신고(bug report, 버그 리포트)
+ - 기능 추가등의 프로젝트 개선 제안(enhancement)
+ - 위 문제들을 해결하기 위한 작업단위
+ - ex ) 
+  1. 회원가입 기능에서 bug가 있어요! issue 등록해둘게요!
+  2. 여기 버튼을 더 눈에 잘 보이게 고치면 좋겠는데요? issue등록 해둘게요!
+  3. 6번 issue 제가 처리할게요! 제 앞으로 할당해두겠습니다!
+ - issue는 먼저 만들고 협업전 논의한 후 작업을 진행하는 방법도 있다.
+ - 또는 혼자 프로젝트 할시에도 작업기록을 체계적으로 관리하는데 도움된다.
+ - 오픈소스 프로젝트에서는 issue에서 작업을 어떻게 해야할지 많은 논의를 하고 작업 하는 경우도
+  많다.
+
+✔ Branch
+
+ - 나뭇가지 뻗어나오듯 기능에 맞게 나누어 작업을 할 수 있다.
+ - 만약 각자 다른 작업중일때 commit history를 나중에 확인 하였더니 작업내역이 섞여 있어서 각 작업이
+  어떻게 진행되는지 보기가 어려울 수 있다.
+ - 게다가 내 작업만 열심히 commit하는게 아니라 다른 부분도 신경을 써주거나 각자 같은 파일을 작업하면서 
+  충돌이 나서 더 이상 작업이 힘들수가 있다. 서로 작업한 commit내역을 내 local repo에도 틈틈이 반영해줘야
+  한다!
+ - commit을 main이라는 이름을 가진 branch라는 것을 알고 있는가?
+ - 프로젝트마다 사실 설정되어 있다. 기본 branch는 main이기 때문에 바꿀 필요가 없다.
+ - 작업 목적에 따라 branch를 만들어서 관련된 작업만 하고, 나중에 하나로 합치면 된다!
+ - 만약 commit되지 않은 작업 내역이 있다면 commit부터 해준다. 그 이유는 충돌을 방지하기 위함이다!
+
+✔ Branch 삭제
+
+ - Branch를 삭제한다는 것은 그동안 Branch에 했던 작업 내역을 즉, commit이 모두 사라진다는 의미이다.
+ - Branch를 del하면 Basic branch인 main branch로 checkout 즉 작업 branch로 change 된다. 작업 branch가 
+  변경되면 파일의 상태도 당연히 해당 branch의 마지막 commit으로 상태가 변경된다.
+ 
+✔ Branch 정리
+
+ - issue는 내가 작업할 것, 기능 추가, 버그 리포트 등 여러 방식으로 사용이 가능!
+ - 협업을 하기 위해 issue를 만들어 누가 작업할지 정하고, 브랜치를 만들어 작업할 공간을 나눈다.
+ - branch는 특정 commit에서 갈라져나와 작업을 할 수 있다. 우리는 기능별로 이름을 만들어주어 branch 작업을
+  해주면 된다.
+ - 작업할 브랜치로 바꾸는 것을 checkout이라 한다. checkout된 branch에서만 commit이 반영된다!
+ - branch를 삭제하고 싶다면? 당연하게도 다른 branch로 이동후 삭제를 해주면 된다!! 그럼 해당 branch에서 
+  작업한 것들은 모두 사라진다. :)
+
+			 💻[Branch 정리]💻
+
+
+	● → 			       ● → 		●
+   (main branch)    		  (1번 branch1)     (2번 branch2)
+	↓ ↘			     ↗[merge1]	      [merge2]
+	     ● →	● →	  ●			↑
+	  (branch1)  (branch1) (branch1)
+	↓						↑
+	
+	● →		● →		● →	        ●
+     (branch2)	     (branch2)	     (branch2)      (branch2)
+
+✔ Merge(병합)
+
+ - 각자 작업을 프로젝트에 합친다.
+ - Merge는 Branch를 다른 Branch에 합치는 것이다. 즉, 특정 Branch의 commit들을 다른 Branch의 commit
+  내역에 모두 반영하는 것이다. 기본적인 설정은 해당 Branch의 모든 commit을 모두 다 반영한다고 생각
+  하면된다.
+ - Branch를 만들고 다했다면 merge(병합)을 한다고 생각하면 된다!
+ - 실제 프로젝트에서는 작업 내역을 모두 합칠 기준이 되는 브랜치를 정해두고 작업한다. 우리가 작업을
+  한뒤에는 다했다면 main Branch로 merge해주면 된다!
+
+✔ Github flow?
+
+ - 프로젝트마다 Branch 관리하는 방법이 조금씩 다르다. commit하고 작업하는 방법을 통틀어 flow(흐름)
+  이라고 한다. 대표적으로 github-flow, gitlab-flow, git-flow가 있다.
+ - 웹 프로젝트 개발의 경우 github-flow를 많이 사용한다.
+
+			💻[Merge]💻
+
+	● →	● →		● (merge branch!)
+      (main)	 ↘	      ↗
+		   ● →    ●	
+		(Branch)
+
+✔ 여러개 Branch를 commit 하고 Merge할때
+
+ - 먼저 issue를 만들어서 실제 프로젝트를 하기전 작업파트를 나뉘어서 한다.
+ - 업데이트를 한후에 필요없다면 branch 만든 것을 삭제해준다.
+
+✔ Merge 정리
+
+ - Branch 작업 내역 commit들을 다른 branch로 반영하는 것을 Merge라고 부른다. 기본적으로 branch단위로
+  merge하게 된다.
+ - 개발할때는 기준이 되는 기본 branch를 정해놓고 다른 branch들을 기본 branch에 merge한다.
+ - 그리고 branch명은 규칙을 가지고 잘 이름 지으면 프로젝트 관리가 쉬워진다.
+ - 작업이 완료되면 작업한 branch는 보통 삭제해준다. 왜냐하면 나중에 branch설정시에 충돌을 방지할 수 
+  있다.
+
+✔ Merge 작업하다 conflict가 발생할때
+
+ - merge conflict를 방지하기 위해서는 프로젝트가 끝날시에 branch를 삭제해주거나 또는 같은 파일을
+  동시에 업로드하지 않는 방법등이 있다.
+
+✔ Merge conflict(머지 충돌)
+
+ - 다들 충돌하면 일단 뇌가 멈춘다. 즉, 여태까지 작업한 것이 충돌로 인하여 자료가 날라가거나, 한다면
+  어떻게 대처할 것인가?
+ - 처음부터 프로그래밍을 잘하지 못한다. 능숙한 프로그래머가 되는 것은 '버그'를 찾아내고 수정하는 법
+  을 익히고 옳게 수정하였는가 못하였는가가 아닌 버그를 찾고 수정을 할 수 있는가 없는가이다. 결과물을
+  바라보는 방식이 지식과 지식 습득을 대하는 좀 더 큰 문화에까지 보편화 된다면 '틀리는 것'에 대해 두
+  려워하게 될 것이다.(mindstorm)
+ - Git은 친절하게도 충돌이 일어나면 내용을 알려준다. XX내용에서 에러가 났다! 어떻게 할래? 그러니 
+  이부분을 잘 모른다면 구글링을 통해서 에러메시지를 복사 붙여넣기로 확인하여 수정을 해서 작업을
+  완료하면 된다!
+
+✔ Merge conflict 정리
+
+ - 각 작업 Branch에서 작업할 때는 다른 Branch의 영향을 받지 않고 독립적으로 작업 할 수 있다.
+ - Merge 하는 과정에서 같은 파일이 동일한 부분이 수정된 게 발견되면 Merge conflict가 발생한다.
+ - 그럴땐 Merge conflict 일어난 파일을 수정하여 다시 merge commit하면 해결된다!
+
+✔ Remote repo 와 Branch [정리]
+
+ - tracking한다는 것은 local repo와 remote repo의 특정 branch를 연결해주는 것이다.
+ - push와 pull은 기본적으로 tracking되고 있는 branch를 기준으로 commit내역을 반영한다.
+
+✔ remote repo와 branch[개념]
+
+ - remote repo는 local repo와 연결이 되어있습니다. 이 연결은 local repo의 branch와 remote repo의
+  branch가 연결되어 있다. 그러나 따로 설정하지 않고 기본적으로 local repo의 branch명과 같게 remote
+  repo의 branch명이 생성되어 tracking된다.
+ - commit history에 보여지는 origin/main이름표는 remote repo의 main branch라는 뜻이다. remote repo를
+  연결할때 origin이라고 적어주었기 때문에 앞에 origin이 붙는 것이다.
+
+ - 연결의 개념
+
+      🟥             ●   →    ●   →    ●
+ (Remote repo)    (commit1)  (commit2)  (commit3) [origin/main]
+
+						       ↑(tracking)
+      💻		     ●   →    ●   →    ●        [main]
+ (Local repo)	  (commit1)  (commit2)  (commit3)
+
+ - pull과 push는 결국 특정 branch(tracking branch)에 있는 commit을 여기와 연결되어있는 branch에 가져
+  오는 것이다!
+
+ 				🟥
+	           	   (Remote repo)
+
+  (Tracking하는 branch에 push) ↑ ↓(Tracking하는 branch에서 pull)
+				💻
+			   (Local repo)
+
+ - remote repo branch와 local repo branch 연결 확인
+
+      🟥		    ●   →    ●		[origin/main]
+ (Remote repo)   (commit1)  (commit2)		     ↑
+						     
+					  (Tracking) ↑
+      💻		    ● → ● → ● → ● → ●     [main]
+ (Local repo) 	  (com1)(com2)(com3)(com4)(com5)
+
+ ※ Local repo에서 com3, com4, com5를 tracking하는 branch에 push해주면 origin/main에 업로드가 된다!
+
+ - local repo에서 remote repo에 origin/main이 아닌 추가로 origin/다른 branch를 생성해줘서 작업에 
+  혼란을 주지 않고 따로 작업을 할때 분리를 해주면 나중에 볼때도 구분하기 쉽다.
+
+      🟥		   ●   →    origin/feature/jjim
+ (Remote repo)
+				   ↑ (Tracking)
+			       ●  
+ 			    ↗		
+      💻		   ● → ●
+ (Local repo)    (merge branch 'feature/jjim')
