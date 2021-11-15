@@ -11,7 +11,6 @@
 
 ## Git정리
 
-<p>
   • Commit
   • Push
   • Pull
@@ -21,4 +20,3 @@
   • Merge Conflict
   • Remote Repo
   • Local Repo
-</p>
