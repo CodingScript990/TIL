@@ -11,12 +11,12 @@
 
 ## Git정리
 
-  • Commit
-  • Push
-  • Pull
-  • Issue
-  • Branch
-  • Merge
-  • Merge Conflict
-  • Remote Repo
-  • Local Repo
+&nbsp; • Commit <br/>
+&nbsp; • Push <br/>
+&nbsp; • Pull <br/>
+&nbsp; • Issue <br/>
+&nbsp; • Branch <br/>
+&nbsp; • Merge <br/>
+&nbsp; • Merge Conflict <br/>
+&nbsp; • Remote Repo <br/>
+&nbsp; • Local Repo
