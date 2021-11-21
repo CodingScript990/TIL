@@ -19,11 +19,11 @@
 &nbsp; • Merge <br/>
 &nbsp; • Merge Conflict <br/>
 &nbsp; • Remote Repo <br/>
-&nbsp; • Local Repo
-&nbsp; • amend
-&nbsp; • revert
-&nbsp; • reset
-&nbsp; • stash
-&nbsp; • commit message convention
-&nbsp; • code review
+&nbsp; • Local Repo <br/>
+&nbsp; • amend <br/>
+&nbsp; • revert <br/>
+&nbsp; • reset <br/>
+&nbsp; • stash <br/>
+&nbsp; • commit message convention <br/>
+&nbsp; • code review <br/>
 &nbsp; • open source
